@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""simple pagination"""
+""" simple_pagination module """
 
 import csv
-import math
 from typing import List
+from typing import Tuple
+
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
@@ -20,6 +21,7 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
 
     return (page_size * (page - 1), page_size * page)
+
 
 class Server:
     """Server class to paginate a database of popular baby names.
@@ -55,4 +57,3 @@ class Server:
             page_size) is int and page > 0 and page_size > 0
 
         return self.dataset()[slice(*index_range(page, page_size))]
-
