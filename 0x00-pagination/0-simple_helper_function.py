@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
-
-"""This script takes two arguments and return a tuple 
-corresponding to the range of indexes to return 
-in a list for those particular pagination parameters.
-"""
+""" index_range module """
 
 from typing import Tuple
 
+
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-     """
+    """
 
         Args:
             page: the number of the page
@@ -20,4 +17,5 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
             particular pagination parameters.
 
     """
+
     return (page_size * (page - 1), page_size * page)
