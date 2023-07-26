@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""0-basic_cache"""
-
+""" BasicCache module """
 from base_caching import BaseCaching
+
+
 class BasicCache(BaseCaching):
-     """ BasicCache class that inherits from BaseCaching """
+    """ BasicCache class that inherits from BaseCaching """
 
     def put(self, key, item):
         """ Add an item in the cache """

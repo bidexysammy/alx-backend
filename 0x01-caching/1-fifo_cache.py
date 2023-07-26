@@ -1,21 +1,22 @@
 #!/usr/bin/python3
-
-"""fifo_cache module"""
+""" FIFOCache module """
 from base_caching import BaseCaching
 
+
 class FIFOCache(BaseCaching):
-    """Uses the first in first out method"""
+    """ FIFOCache class that inherits from BaseCaching """
+
     def put(self, key, item):
-        """Assigns some data to the cache"""
+        """ Add an item in the cache """
         if key and item:
             self.cache_data[key] = item
 
             if len(self.cache_data) > self.MAX_ITEMS:
-                first_item = sorted(self.cache_data)[0]
-                print("DISCARD: {}".format(first_item))
-                del self.cache_data[first_item]
+                toDelete = sorted(self.cache_data)[0]
+                print("DISCARD: {}".format(toDelete))
+                del self.cache_data[toDelete]
 
-     def get(self, key):
+    def get(self, key):
         """ Get an item by key """
         if key and key in self.cache_data:
             return self.cache_data.get(key)
